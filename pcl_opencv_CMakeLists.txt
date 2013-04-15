@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+
+project( Project_name )
+
+find_package( PCL 1.2 REQUIRED )
+
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+find_package( OpenCV REQUIRED )
+add_executable( Project_name filename.cpp )
+target_link_libraries( Project_name ${OpenCV_LIBS} ${PCL_LIBRARIES})
+
